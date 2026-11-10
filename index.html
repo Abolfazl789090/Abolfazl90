@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ابوالفضل واله آزادی</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600;800&display=swap">
+<style>
+:root {
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  --bg: #F5EBDD;
+  --card: #FFF8EE;
+  --border: #E3D2BC;
+  --text: #4B2E1E;
+  --muted: #6B4A36;
+  --accent: #8B5A2B;
+  --on-accent: #F5EBDD;
+  --btn-bg: #4B2E1E;
+  --btn-text: #F5EBDD;
+  --input-border: #CDB89B;
+}
+html { scroll-padding-top: env(safe-area-inset-top, 0px); }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #1C130D; --card: #2A1D14; --border: #4A3626; --text: #F5EBDD;
+    --muted: #CDB89B; --accent: #D9A66B; --on-accent: #1C130D;
+    --btn-bg: #F5EBDD; --btn-text: #1C130D; --input-border: #6B4A36;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #1C130D; --card: #2A1D14; --border: #4A3626; --text: #F5EBDD;
+  --muted: #CDB89B; --accent: #D9A66B; --on-accent: #1C130D;
+  --btn-bg: #F5EBDD; --btn-text: #1C130D; --input-border: #6B4A36;
+}
+*, *::before, *::after { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Vazirmatn', Tahoma, sans-serif;
+  line-height: 1.9;
+}
+a { text-decoration: none; }
+.container { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+.view { display: none; }
+.view.active { display: block; }
+
+.header { display: flex; align-items: center; justify-content: space-between; padding: 24px 0; }
+.logo { font-size: 22px; font-weight: 800; color: var(--accent); }
+.header a { color: var(--text); font-size: 15px; }
+.header a:hover { text-decoration: underline; }
+
+.hero { text-align: center; padding: 48px 0 32px; display: flex; flex-direction: column; align-items: center; gap: 20px; }
+.tag { display: inline-block; border: 1px solid var(--accent); color: var(--accent); font-size: 14px; padding: 2px 16px; border-radius: 999px; }
+.hero h1 { margin: 0; font-size: clamp(30px, 6vw, 48px); line-height: 1.4; font-weight: 800; }
+.hero h1 span { color: var(--accent); }
+.hero p { margin: 0; max-width: 560px; font-size: 18px; color: var(--muted); }
+.landing-hero { min-height: 70vh; justify-content: center; }
+
+.btn {
+  display: inline-block; border: 0; cursor: pointer;
+  background: var(--accent); color: var(--on-accent);
+  font-family: inherit; font-size: 18px; font-weight: 800;
+  padding: 14px 36px; border-radius: 12px;
+}
+.btn:hover { filter: brightness(1.1); }
+.btn-dark { background: var(--btn-bg); color: var(--btn-text); font-size: 16px; font-weight: 600; padding: 10px 24px; border-radius: 10px; margin-top: 16px; }
+
+.box { max-width: 440px; margin: 24px auto 0; background: var(--card); border: 1px solid var(--border); border-radius: 20px; padding: 40px 32px; }
+.box h1 { margin: 0 0 8px; font-size: 28px; font-weight: 800; }
+.box .sub { margin: 0 0 28px; color: var(--muted); }
+label { display: block; margin-bottom: 6px; font-size: 15px; font-weight: 600; }
+input { width: 100%; padding: 14px 16px; margin-bottom: 20px; background: var(--bg); color: var(--text); border: 1px solid var(--input-border); border-radius: 10px; font-family: inherit; font-size: 16px; }
+input:focus { outline: 2px solid var(--accent); border-color: var(--accent); }
+.box .btn { width: 100%; }
+.back { display: block; text-align: center; margin-top: 20px; color: var(--accent); font-size: 15px; }
+
+.section-title { margin: 40px 0 16px; font-size: 24px; font-weight: 800; text-align: center; }
+.cards { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.card { display: block; background: var(--card); border: 1px solid var(--border); border-radius: 20px; padding: 28px; color: var(--text); }
+a.card:hover { border-color: var(--accent); }
+.card h3 { margin: 0 0 6px; font-size: 22px; font-weight: 800; }
+.card p { margin: 0; color: var(--muted); }
+.value { margin-top: 8px; font-size: 20px; font-weight: 600; color: var(--accent); direction: ltr; text-align: right; }
+.footer { margin: 48px 0 0; border-top: 1px solid var(--border); padding: 24px 0 32px; text-align: center; color: var(--muted); font-size: 14px; }
+@media (max-width: 640px) { .cards { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<div class="view active" id="v-landing">
+  <div class="container">
+    <div class="header"><div class="logo">ابوالفضل واله آزادی</div></div>
+    <section class="hero landing-hero">
+      <div class="tag">طراح سایت و گرافیست</div>
+      <h1>آشنایی با <span>ابوالفضل واله آزادی</span></h1>
+      <p>من ابوالفضل واله آزادی هستم، طراح سایت و گرافیست. اینجا می‌توانید با من آشنا شوید و برای همکاری با من در ارتباط باشید.</p>
+      <a href="#signup" data-go="signup" class="btn">با من آشنا شوید</a>
+    </section>
+  </div>
+</div>
+
+<div class="view" id="v-signup">
+  <div class="container">
+    <div class="header"><a href="#landing" data-go="landing" class="logo">ابوالفضل واله آزادی</a></div>
+    <div class="box">
+      <h1>ساخت حساب کاربری</h1>
+      <p class="sub">اطلاعات خود را وارد کنید.</p>
+      <form id="signup-form" action="#">
+        <label for="name">نام و نام خانوادگی</label>
+        <input id="name" name="name" type="text" autocomplete="name" required>
+        <button type="submit" class="btn">ثبت‌نام</button>
+      </form>
+      <a href="#landing" data-go="landing" class="back">بازگشت به صفحه اصلی</a>
+    </div>
+  </div>
+</div>
+
+<div class="view" id="v-welcome">
+  <div class="container">
+    <div class="header">
+      <div class="logo">ابوالفضل واله آزادی</div>
+      <a href="#landing" data-go="landing">صفحه اصلی</a>
+    </div>
+    <section class="hero">
+      <div class="tag">ثبت‌نام انجام شد</div>
+      <h1><span id="who">دوست عزیز</span>، خوش آمدید!</h1>
+      <p>من ابوالفضل واله آزادی هستم، طراح سایت و گرافیست.</p>
+    </section>
+
+    <h2 class="section-title">کار من</h2>
+    <div class="cards">
+      <div class="card"><h3>طراحی سایت</h3><p>طراحی صفحات و وب‌سایت.</p></div>
+      <div class="card"><h3>گرافیک</h3><p>طراحی گرافیک.</p></div>
+    </div>
+
+    <h2 class="section-title">ارتباط با من</h2>
+    <div class="cards">
+      <a class="card" href="tel:09936765089">
+        <h3>شماره تماس</h3>
+        <div class="value">09936765089</div>
+        <span class="btn btn-dark">تماس بگیرید</span>
+      </a>
+      <a class="card" href="https://www.instagram.com/Abolfazl_azadi0/" target="_blank" rel="noopener">
+        <h3>اینستاگرام</h3>
+        <div class="value">@Abolfazl_azadi0</div>
+        <span class="btn btn-dark">دیدن صفحه</span>
+      </a>
+    </div>
+
+    <div class="footer">ابوالفضل واله آزادی · همه حقوق محفوظ است</div>
+  </div>
+</div>
+
+<script>
+(function () {
+  var VIEWS = ['landing', 'signup', 'welcome'];
+
+  function go(name) {
+    var i;
+    if (VIEWS.indexOf(name) === -1) { name = 'landing'; }
+    for (i = 0; i < VIEWS.length; i++) {
+      document.getElementById('v-' + VIEWS[i]).className = 'view' + (VIEWS[i] === name ? ' active' : '');
+    }
+    if (name === 'welcome') {
+      try {
+        var saved = localStorage.getItem('visitorName');
+        if (saved) { document.getElementById('who').textContent = saved; }
+      } catch (err) {}
+    }
+    try { window.scrollTo(0, 0); } catch (err2) {}
+  }
+
+  function setHash(name) {
+    try { location.hash = name; } catch (err) {}
+  }
+
+  document.addEventListener('click', function (e) {
+    var el = e.target;
+    while (el && el !== document) {
+      if (el.getAttribute && el.getAttribute('data-go')) {
+        e.preventDefault();
+        go(el.getAttribute('data-go'));
+        setHash(el.getAttribute('data-go'));
+        return;
+      }
+      el = el.parentNode;
+    }
+  });
+
+  document.getElementById('signup-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    try { localStorage.setItem('visitorName', document.getElementById('name').value.trim()); } catch (err) {}
+    go('welcome');
+    setHash('welcome');
+  });
+
+  window.addEventListener('hashchange', function () {
+    go((location.hash || '').replace('#', ''));
+  });
+
+  go((location.hash || '').replace('#', ''));
+})();
+</script>
+</body>
+</html>
